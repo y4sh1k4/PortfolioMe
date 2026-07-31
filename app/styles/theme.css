@@ -1,0 +1,231 @@
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: light;
+
+  --background: #f4f5f7;
+  --foreground: #15161a;
+
+  --portfolio-base: #f4f5f7;
+  --portfolio-surface: rgba(255, 255, 255, 0.58);
+  --portfolio-surface-strong: rgba(255, 255, 255, 0.78);
+  --portfolio-surface-card: rgba(255, 255, 255, 0.82);
+  --portfolio-surface-tile: rgba(248, 249, 251, 0.76);
+  --portfolio-surface-control: rgba(255, 255, 255, 0.9);
+  --portfolio-overlay: rgba(245, 247, 250, 0.38);
+
+  --portfolio-border: #d6d9df;
+  --portfolio-border-strong: #bec3cc;
+  --portfolio-border-control: #aab0bb;
+
+  --portfolio-text: #181a1f;
+  --portfolio-text-bright: #0f1115;
+  --portfolio-text-soft: #333741;
+  --portfolio-text-muted: #5d6470;
+  --portfolio-text-subtle: #747b87;
+  --portfolio-nav-text: #4d535e;
+
+  --portfolio-accent: #4e5662;
+  --portfolio-accent-soft: #68717e;
+  --portfolio-accent-muted: #747d89;
+  --portfolio-accent-weak: rgba(104, 113, 126, 0.28);
+  --portfolio-hover-glow: rgba(74, 84, 99, 0.18);
+  --portfolio-hover-glow-soft: rgba(74, 84, 99, 0.08);
+  --portfolio-hover-inset: rgba(74, 84, 99, 0.12);
+
+  --portfolio-contribution-empty: rgba(224, 227, 232, 0.96);
+  --portfolio-contribution-low: rgba(175, 181, 190, 0.96);
+  --portfolio-contribution-mid: rgba(124, 133, 146, 0.96);
+  --portfolio-contribution-high: rgba(74, 84, 99, 0.96);
+  --portfolio-contribution-peak: rgba(20, 23, 29, 0.96);
+
+  --portfolio-font-display: var(--font-instrument-serif), Georgia, serif;
+  --portfolio-font-body: Inter, Arial, Helvetica, sans-serif;
+  --portfolio-font-note: "Edu TAS Beginner", "Comic Sans MS", cursive;
+  --portfolio-font-ui: "Instrument Sans", Inter, Arial, Helvetica, sans-serif;
+
+  --portfolio-radius-nav: 22px;
+  --portfolio-radius-card: 14px;
+  --portfolio-radius-tile: 10px;
+  --portfolio-radius-tag: 6px;
+
+  --portfolio-shadow-smoke: 0 0 80px rgba(112, 122, 136, 0.12);
+  --portfolio-shadow-card: 0 24px 70px rgba(26, 31, 41, 0.14);
+  --portfolio-shadow-glass: inset 0 1px 0 rgba(255, 255, 255, 0.58);
+
+  --portfolio-content-width: 1197px;
+  --portfolio-page-padding: clamp(1rem, 4vw, 3rem);
+  --portfolio-section-gap: clamp(4rem, 9vw, 8rem);
+}
+
+.dark {
+  color-scheme: dark;
+
+  --background: #050505;
+  --foreground: #f3f0ea;
+
+  --portfolio-base: #050505;
+  --portfolio-surface: rgba(8, 8, 8, 0.54);
+  --portfolio-surface-strong: rgba(11, 11, 11, 0.78);
+  --portfolio-surface-card: rgba(10, 10, 10, 0.78);
+  --portfolio-surface-tile: rgba(11, 11, 11, 0.72);
+  --portfolio-surface-control: rgba(16, 16, 16, 0.92);
+  --portfolio-overlay: rgba(0, 0, 0, 0.42);
+
+  --portfolio-border: #1c1c1e;
+  --portfolio-border-strong: #3a3a3a;
+  --portfolio-border-control: #404040;
+
+  --portfolio-text: #f3f0ea;
+  --portfolio-text-bright: #f4f0e8;
+  --portfolio-text-soft: #e1e1e1;
+  --portfolio-text-muted: #b8b8b8;
+  --portfolio-text-subtle: #8e8e8e;
+  --portfolio-nav-text: #a6a6a6;
+
+  --portfolio-accent: #f1f1f4;
+  --portfolio-accent-soft: #ffffff;
+  --portfolio-accent-muted: #c8c8cf;
+  --portfolio-accent-weak: rgba(241, 241, 244, 0.34);
+  --portfolio-hover-glow: rgba(255, 255, 255, 0.18);
+  --portfolio-hover-glow-soft: rgba(255, 255, 255, 0.06);
+  --portfolio-hover-inset: rgba(255, 255, 255, 0.08);
+
+  --portfolio-contribution-empty: rgba(28, 28, 32, 0.96);
+  --portfolio-contribution-low: rgba(82, 82, 90, 0.96);
+  --portfolio-contribution-mid: rgba(124, 124, 134, 0.96);
+  --portfolio-contribution-high: rgba(178, 178, 188, 0.96);
+  --portfolio-contribution-peak: rgba(244, 244, 248, 0.96);
+
+  --portfolio-font-display: var(--font-instrument-serif), Georgia, serif;
+  --portfolio-font-body: Inter, Arial, Helvetica, sans-serif;
+  --portfolio-font-note: "Edu TAS Beginner", "Comic Sans MS", cursive;
+  --portfolio-font-ui: "Instrument Sans", Inter, Arial, Helvetica, sans-serif;
+
+  --portfolio-radius-nav: 22px;
+  --portfolio-radius-card: 14px;
+  --portfolio-radius-tile: 10px;
+  --portfolio-radius-tag: 6px;
+
+  --portfolio-shadow-smoke: 0 0 80px rgba(255, 255, 255, 0.08);
+  --portfolio-shadow-card: 0 24px 70px rgba(0, 0, 0, 0.35);
+  --portfolio-shadow-glass: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-portfolio-base: var(--portfolio-base);
+  --color-portfolio-surface: var(--portfolio-surface);
+  --color-portfolio-surface-strong: var(--portfolio-surface-strong);
+  --color-portfolio-surface-card: var(--portfolio-surface-card);
+  --color-portfolio-surface-tile: var(--portfolio-surface-tile);
+  --color-portfolio-surface-control: var(--portfolio-surface-control);
+  --color-portfolio-overlay: var(--portfolio-overlay);
+
+  --color-portfolio-border: var(--portfolio-border);
+  --color-portfolio-border-strong: var(--portfolio-border-strong);
+  --color-portfolio-border-control: var(--portfolio-border-control);
+
+  --color-portfolio-text: var(--portfolio-text);
+  --color-portfolio-text-bright: var(--portfolio-text-bright);
+  --color-portfolio-text-soft: var(--portfolio-text-soft);
+  --color-portfolio-text-muted: var(--portfolio-text-muted);
+  --color-portfolio-text-subtle: var(--portfolio-text-subtle);
+  --color-portfolio-nav-text: var(--portfolio-nav-text);
+
+  --color-portfolio-accent: var(--portfolio-accent);
+  --color-portfolio-accent-soft: var(--portfolio-accent-soft);
+  --color-portfolio-accent-muted: var(--portfolio-accent-muted);
+  --color-portfolio-accent-weak: var(--portfolio-accent-weak);
+
+  --color-portfolio-contribution-empty: var(--portfolio-contribution-empty);
+  --color-portfolio-contribution-low: var(--portfolio-contribution-low);
+  --color-portfolio-contribution-mid: var(--portfolio-contribution-mid);
+  --color-portfolio-contribution-high: var(--portfolio-contribution-high);
+  --color-portfolio-contribution-peak: var(--portfolio-contribution-peak);
+
+  --font-sans: var(--portfolio-font-body);
+  --font-display: var(--portfolio-font-display);
+  --font-note: var(--portfolio-font-note);
+  --font-ui: var(--portfolio-font-ui);
+  --font-mono: var(--font-geist-mono);
+
+  --radius-portfolio-nav: var(--portfolio-radius-nav);
+  --radius-portfolio-card: var(--portfolio-radius-card);
+  --radius-portfolio-tile: var(--portfolio-radius-tile);
+  --radius-portfolio-tag: var(--portfolio-radius-tag);
+
+  --shadow-portfolio-smoke: var(--portfolio-shadow-smoke);
+  --shadow-portfolio-card: var(--portfolio-shadow-card);
+  --shadow-portfolio-glass: var(--portfolio-shadow-glass);
+}
+
+::selection {
+  background: color-mix(in srgb, var(--portfolio-accent) 40%, transparent);
+  color: var(--portfolio-text);
+}
+
+.portfolio-page {
+  background:
+    radial-gradient(circle at 12% 5%, rgba(255, 255, 255, 0.1), transparent 24rem),
+    radial-gradient(circle at 82% 2%, rgba(210, 210, 220, 0.08), transparent 28rem),
+    radial-gradient(circle at 66% 45%, rgba(120, 120, 120, 0.12), transparent 34rem),
+    var(--portfolio-base);
+  color: var(--portfolio-text);
+  font-family: var(--portfolio-font-body);
+}
+
+.portfolio-shell {
+  border-inline: 1px solid var(--portfolio-border);
+  background: var(--portfolio-surface);
+  box-shadow: var(--portfolio-shadow-glass);
+}
+
+.portfolio-glass {
+  border: 1px solid var(--portfolio-border);
+  background: var(--portfolio-surface-strong);
+  box-shadow: var(--portfolio-shadow-glass);
+  backdrop-filter: blur(18px);
+}
+
+.portfolio-card {
+  border: 1px solid var(--portfolio-border-strong);
+  background: var(--portfolio-surface-card);
+  box-shadow: var(--portfolio-shadow-card);
+}
+
+.portfolio-dashed-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, transparent, black 8%, black 92%, transparent);
+}
+
+.portfolio-divider {
+  border-color: rgba(255, 255, 255, 0.1);
+  border-style: dashed;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-new(root) {
+  z-index: 1;
+}
+
+::view-transition-old(root) {
+  z-index: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 1ms;
+  }
+}
