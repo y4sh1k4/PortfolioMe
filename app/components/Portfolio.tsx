@@ -5,6 +5,7 @@ import { About } from "./About";
 import { Contact } from "./Contact";
 import { Activity } from "./Activity";
 import { TechStack } from "./TechStack";
+import { Experience } from "./Experience";
 
 export const Portfolio = () => {
   return (
@@ -21,6 +22,7 @@ export const Portfolio = () => {
       <DecorativeHorizontalStrip/>
       <TechStack/>
       <DecorativeHorizontalStrip/>
+      <Experience/>
     </div>
   );
 };
