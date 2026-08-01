@@ -7,22 +7,36 @@ import { Activity } from "./Activity";
 import { TechStack } from "./TechStack";
 import { Experience } from "./Experience";
 
+const revealSections = [
+  <Navbar key="navbar" />,
+  <DecorativeHorizontalStrip key="strip-me" />,
+  <Me key="me" />,
+  <DecorativeHorizontalStrip key="strip-about" />,
+  <About key="about" />,
+  <DecorativeHorizontalStrip key="strip-contact" />,
+  <Contact key="contact" />,
+  <DecorativeHorizontalStrip key="strip-activity" />,
+  <Activity key="activity" />,
+  <DecorativeHorizontalStrip key="strip-tech" />,
+  <TechStack key="tech-stack" />,
+  <DecorativeHorizontalStrip key="strip-experience" />,
+  <Experience key="experience" />,
+];
+
 export const Portfolio = () => {
   return (
     <div className="flex min-h-full flex-col text-center">
-      <Navbar/>
-      <DecorativeHorizontalStrip/>
-      <Me/>
-      <DecorativeHorizontalStrip/>
-      <About/>
-      <DecorativeHorizontalStrip/>
-      <Contact/>
-      <DecorativeHorizontalStrip/>
-      <Activity/>
-      <DecorativeHorizontalStrip/>
-      <TechStack/>
-      <DecorativeHorizontalStrip/>
-      <Experience/>
+      {revealSections.map((section, index) => (
+        <div
+          key={section.key}
+          className="portfolio-reveal"
+          style={{
+            animationDelay: `${index * 30}ms`,
+          }}
+        >
+          {section}
+        </div>
+      ))}
     </div>
   );
 };
