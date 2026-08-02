@@ -2,9 +2,14 @@ import Image from "next/image";
 import { DottedStrip } from "./Strips/Strip";
 import { DottedHorizontalStrip } from "./Strips/HorizontalStrip";
 import { FaRegEye } from "react-icons/fa";
-import { DecorativeHorizontalStrip } from "./Strips/DecorativeHorizontalStrip";
 
 export const Me = () => {   
+    const roles = [
+        "Design Engineer",
+        "Frontend Developer",
+        "Software Engineer - UI Focused",
+    ];
+
     return(
         <div className="flex">
             <div className="py-2 px-2 flex items-center justify-center">
@@ -20,7 +25,13 @@ export const Me = () => {
                 </div>
                 <DottedHorizontalStrip width="w-full"/>
                 <div className="flex justify-between w-full">
-                    <div className="flex items-start justify-start text-xl text-portfolio-accent font-note px-4 flex-1 ">Design Engineer</div>
+                    <div className="flex items-start justify-start px-4 text-xl text-portfolio-accent opacity-60 font-note flex-1">
+                        <div className="role-rotator relative h-9 min-w-[18rem] overflow-hidden">
+                            {roles.map((role) => (
+                                <span key={role}>{role}</span>
+                            ))}
+                        </div>
+                    </div>
                     <DottedStrip/>
                     <div className="flex items-center gap-2 text-sm text-portfolio-nav-text px-4 py-2">
                         <FaRegEye /> 2

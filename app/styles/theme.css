@@ -213,6 +213,24 @@
   animation: portfolio-reveal 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+.role-rotator span {
+  position: absolute;
+  inset: 0 auto auto 0;
+  opacity: 0;
+  white-space: nowrap;
+  transform: translateY(0.85em);
+  filter: blur(5px);
+  animation: role-rotate 7.5s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+.role-rotator span:nth-child(2) {
+  animation-delay: 2.5s;
+}
+
+.role-rotator span:nth-child(3) {
+  animation-delay: 5s;
+}
+
 @keyframes portfolio-reveal {
   from {
     opacity: 0;
@@ -224,6 +242,28 @@
     opacity: 1;
     transform: translateY(0);
     filter: blur(0);
+  }
+}
+
+@keyframes role-rotate {
+  0% {
+    opacity: 0;
+    transform: translateY(0.85em);
+    filter: blur(5px);
+  }
+
+  8%,
+  28% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+
+  36%,
+  100% {
+    opacity: 0;
+    transform: translateY(-0.85em);
+    filter: blur(5px);
   }
 }
 
@@ -244,6 +284,17 @@
 @media (prefers-reduced-motion: reduce) {
   .portfolio-reveal {
     animation: none;
+  }
+
+  .role-rotator span {
+    animation: none;
+    opacity: 0;
+    transform: none;
+    filter: none;
+  }
+
+  .role-rotator span:first-child {
+    opacity: 1;
   }
 
   ::view-transition-old(root),
