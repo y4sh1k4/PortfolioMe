@@ -76,19 +76,18 @@ export const Experience = () => {
 
       <div className="px-4 py-4 text-left">
         {experiences.map((experience, index) => {
-          const isCurrent = experience.date.includes("Present");
           const experienceId = `experience-${index}`;
           const isExpanded = expandedExperience === experienceId;
 
           return (
-            <article
+            <div
               key={`${experience.companyName}-${experience.date}`}
               className="group relative grid grid-cols-[1.5rem_minmax(0,1fr)] gap-4 pb-5 last:pb-0"
             >
-              <div className="relative flex justify-center">
+              <div className="relative flex translate-y-3 justify-center">
                 <span
                   className={`
-                    mt-4 grid size-5 rotate-45 place-items-center
+                    grid size-5 rotate-45 place-items-center
                     border bg-portfolio-base
                     transition-all duration-300
                     group-hover:border-portfolio-border-control
@@ -250,7 +249,7 @@ export const Experience = () => {
                   </div>
                 </div>
               </div>
-            </article>
+            </div>
           );
         })}
       </div>

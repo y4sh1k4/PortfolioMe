@@ -6,6 +6,7 @@ import { Contact } from "./Contact";
 import { Activity } from "./Activity";
 import { TechStack } from "./TechStack";
 import { Experience } from "./Experience";
+import { Project } from "./Project";
 
 const revealSections = [
   <Navbar key="navbar" />,
@@ -21,6 +22,8 @@ const revealSections = [
   <TechStack key="tech-stack" />,
   <DecorativeHorizontalStrip key="strip-experience" />,
   <Experience key="experience" />,
+  <DecorativeHorizontalStrip key="strip-project" />,
+  <Project key="project" />
 ];
 
 export const Portfolio = () => {
