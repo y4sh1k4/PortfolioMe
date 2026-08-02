@@ -7,6 +7,9 @@ import { Activity } from "./Activity";
 import { TechStack } from "./TechStack";
 import { Experience } from "./Experience";
 import { Project } from "./Project";
+import { Talk } from "./Talk";
+import { Quote } from "./Quote";
+import { Copyright } from "./Copyright";
 
 const revealSections = [
   <Navbar key="navbar" />,
@@ -15,15 +18,21 @@ const revealSections = [
   <DecorativeHorizontalStrip key="strip-about" />,
   <About key="about" />,
   <DecorativeHorizontalStrip key="strip-contact" />,
-  <Contact key="contact" />,
+  <section id="contact" key="contact"><Contact /></section>,
   <DecorativeHorizontalStrip key="strip-activity" />,
   <Activity key="activity" />,
   <DecorativeHorizontalStrip key="strip-tech" />,
   <TechStack key="tech-stack" />,
   <DecorativeHorizontalStrip key="strip-experience" />,
-  <Experience key="experience" />,
+  <section id="experience" key="experience"><Experience /></section>,
   <DecorativeHorizontalStrip key="strip-project" />,
-  <Project key="project" />
+  <section id="projects" key="project"><Project /></section>,
+  <DecorativeHorizontalStrip key="strip-talk" />,
+  <Talk key="talk" />,
+  <DecorativeHorizontalStrip key="strip-quote" />,
+  <Quote key="quote" />,
+  <DecorativeHorizontalStrip key="strip-copyright" />,
+  <Copyright key="copyright" />,
 ];
 
 export const Portfolio = () => {

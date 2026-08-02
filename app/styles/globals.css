@@ -7,6 +7,12 @@ body {
   font-family: var(--portfolio-font-body);
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 main{
   display: flex;
   align-items: center;

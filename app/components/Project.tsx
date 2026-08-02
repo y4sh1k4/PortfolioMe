@@ -46,7 +46,7 @@ export const Project = () =>{
                                 <MdArrowOutward/>
                             </span>
                         </div>
-                        <ul className="mt-6 flex flex-wrap gap-2" aria-label={`${project.name} tech stack`}>
+                        <ul className="mt-10 flex flex-wrap gap-2" aria-label={`${project.name} tech stack`}>
                             {project.stack.map((technology) => (
                                 <li
                                     key={technology}

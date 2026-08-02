@@ -18,7 +18,7 @@ export function Navbar() {
     });
     const [playToggleSound] = useSound(TOGGLE_CLICK_SOUND, {
         interrupt: true,
-        volume: 0.28,
+        volume: 1,
     });
 
     function syncDocumentTheme(nextIsDark: boolean) {
@@ -81,9 +81,9 @@ export function Navbar() {
             <div className="py-2 z-20 flex w-[90%] items-center justify-between ">
             <div className="font-display text-xl text-portfolio-text-bright">YASHIKA</div>
             <div className="flex gap-6 items-center justify-center ">
-                <div className="cursor-pointer text-sm text-portfolio-nav-text hover:text-portfolio-text-bright">Work</div>
-                <div className="cursor-pointer text-sm text-portfolio-nav-text hover:text-portfolio-text-bright">Projects</div>
-                <div className="cursor-pointer text-sm text-portfolio-nav-text hover:text-portfolio-text-bright">Contact</div>
+                <a href="#experience" className="text-sm text-portfolio-nav-text transition-colors hover:text-portfolio-text-bright focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-portfolio-accent">Work</a>
+                <a href="#projects" className="text-sm text-portfolio-nav-text transition-colors hover:text-portfolio-text-bright focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-portfolio-accent">Projects</a>
+                <a href="#contact" className="text-sm text-portfolio-nav-text transition-colors hover:text-portfolio-text-bright focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-portfolio-accent">Contact</a>
             </div>
             <button
                 type="button"
