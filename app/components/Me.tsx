@@ -1,43 +1,56 @@
 import Image from "next/image";
-import { DottedStrip } from "./Strips/Strip";
-import { DottedHorizontalStrip } from "./Strips/HorizontalStrip";
 import { FaRegEye } from "react-icons/fa";
+import { DottedHorizontalStrip } from "./Strips/HorizontalStrip";
+import { DottedStrip } from "./Strips/Strip";
 
-export const Me = () => {   
-    const roles = [
-        "Design Engineer",
-        "Frontend Developer",
-        "Software Engineer - UI Focused",
-    ];
+export const Me = () => {
+  const roles = [
+    "Design Engineer",
+    "Frontend Developer",
+    "Software Engineer - UI Focused",
+  ];
 
-    return(
-        <div className="flex">
-            <div className="py-2 px-2 flex items-center justify-center">
-                <Image src="/images/me.jpeg" width={50} height={20} alt="Yashika Mehndiratta" className="w-full h-full "/>
-            </div>
-            <DottedStrip/>
-            <div className="flex flex-col items-start gap-1 justify-center h-full flex-1">
-                {/* <DecorativeHorizontalStrip height="h-8" /> */}
-                <div className="flex flex-wrap items-center gap-3 px-4 py-1">
-                    <div className="text-4xl font-display font-normal tracking-tight text-portfolio-text">
-                        Yashika Mehndiratta
-                    </div>
-                </div>
-                <DottedHorizontalStrip width="w-full"/>
-                <div className="flex justify-between w-full">
-                    <div className="flex items-start justify-start px-4 text-xl text-portfolio-accent opacity-60 font-note flex-1">
-                        <div className="role-rotator relative h-9 min-w-[18rem] overflow-hidden">
-                            {roles.map((role) => (
-                                <span key={role}>{role}</span>
-                            ))}
-                        </div>
-                    </div>
-                    <DottedStrip/>
-                    <div className="flex items-center gap-2 text-sm text-portfolio-nav-text px-4 py-2">
-                        <FaRegEye /> 2
-                    </div>
-                </div>
-            </div>
+  return (
+    <section className="grid grid-cols-[auto_1px_minmax(0,1fr)]">
+      <div className="grid place-items-center p-2">
+        <Image
+          src="/images/me.jpg"
+          width={80}
+          height={80}
+          alt="Yashika Mehndiratta"
+          className="size-20 object-cover"
+        />
+      </div>
+
+      <DottedStrip />
+
+      <div className="flex min-w-0 flex-col">
+        <div className="px-4 py-2">
+          <h1 className="font-display text-4xl text-left leading-none tracking-tight text-portfolio-text">
+            Yashika Mehndiratta
+          </h1>
         </div>
-    )
-}
+
+        <DottedHorizontalStrip width="w-full" />
+
+        <div className="grid min-w-0 grid-cols-[minmax(0,1fr)_1px_auto] items-stretch">
+          <div className="min-w-0 px-4 py-2">
+            <div className="role-rotator relative h-7 overflow-hidden font-note text-xl leading-7 text-portfolio-accent opacity-60">
+              {roles.map((role) => (
+                <span key={role}>{role}</span>
+              ))}
+            </div>
+          </div>
+
+          <DottedStrip />
+
+          <div className="flex items-center gap-2 px-4 font-mono text-sm text-portfolio-nav-text">
+            <FaRegEye aria-hidden="true" />
+            <span className="sr-only">Profile views:</span>
+            2
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};

@@ -76,6 +76,7 @@ export const Experience = () => {
 
       <div className="px-4 py-4 text-left">
         {experiences.map((experience, index) => {
+          const isCurrent = experience.date.includes("Present");
           const experienceId = `experience-${index}`;
           const isExpanded = expandedExperience === experienceId;
 
@@ -92,13 +93,18 @@ export const Experience = () => {
                     transition-all duration-300
                     group-hover:border-portfolio-border-control
                     border-portfolio-border
+                    ${isCurrent? "border-portfolio-border-control" : ""}
                   `}
                 >
                   <span
                     className={`
                       size-2 bg-portfolio-accent
                       transition-transform duration-300
-                      scale-75 group-hover:scale-100
+                      ${
+                        isCurrent
+                          ? "scale-100 animate-pulse"
+                          : "scale-75 group-hover:scale-100"
+                      }
                     `}
                   />
                 </span>
@@ -115,6 +121,7 @@ export const Experience = () => {
                   transition-[border-color,background-color,transform,box-shadow]
                   duration-300
                   group-hover:border-portfolio-border-control
+                  rounded-lg
                   ${
                     isExpanded
                       ? "border-portfolio-border-control bg-portfolio-surface-control"
