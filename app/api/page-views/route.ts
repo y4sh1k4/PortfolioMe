@@ -1,8 +1,9 @@
 export const dynamic = "force-dynamic";
 
 type AnalyticsResponse = {
-  visitors: number;
-  pageviews: number;
+  data?: {
+    pageviews?: unknown;
+  };
 };
 
 export async function GET() {
@@ -40,10 +41,10 @@ export async function GET() {
       );
     }
 
-    const data = (await response.json()) as AnalyticsResponse;
+    const analytics = (await response.json()) as AnalyticsResponse;
+    const count = analytics.data?.pageviews;
 
-    const count = data.pageviews;
-    if (count === null) {
+    if (typeof count !== "number") {
       return Response.json(
         { count: null, error: "Vercel Analytics returned an unexpected response." },
         { status: 502 },
