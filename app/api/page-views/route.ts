@@ -1,19 +1,9 @@
 export const dynamic = "force-dynamic";
 
-function getCount(data: unknown): number | null {
-  if (typeof data === "number") return data;
-  if (!data || typeof data !== "object") return null;
-
-  const record = data as Record<string, unknown>;
-
-  for (const key of ["count", "value", "total"]) {
-    if (typeof record[key] === "number") return record[key];
-  }
-
-  if (record.data) return getCount(record.data);
-
-  return null;
-}
+type AnalyticsResponse = {
+  visitors: number;
+  pageviews: number;
+};
 
 export async function GET() {
   const token = process.env.VERCEL_ANALYTICS_TOKEN;
@@ -50,8 +40,9 @@ export async function GET() {
       );
     }
 
-    const count = getCount(await response.json());
+    const data = (await response.json()) as AnalyticsResponse;
 
+    const count = data.pageviews;
     if (count === null) {
       return Response.json(
         { count: null, error: "Vercel Analytics returned an unexpected response." },

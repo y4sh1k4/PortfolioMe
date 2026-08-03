@@ -47,7 +47,7 @@ export const Me = () => {
 
           <div className="flex items-center gap-2 px-4 font-mono text-sm text-portfolio-nav-text">
             <FaRegEye aria-hidden="true" />
-            <span className="sr-only">Visitors in the last 30 days:</span>
+            <span className="sr-only">Page views:</span>
             <ViewCount />
           </div>
         </div>
