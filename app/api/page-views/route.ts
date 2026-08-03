@@ -1,13 +1,17 @@
-const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000;
-
 export const dynamic = "force-dynamic";
 
-type AnalyticsCountResponse = number | { count?: number; value?: number };
-
-function getCount(data: AnalyticsCountResponse): number | null {
+function getCount(data: unknown): number | null {
   if (typeof data === "number") return data;
-  if (typeof data.count === "number") return data.count;
-  if (typeof data.value === "number") return data.value;
+  if (!data || typeof data !== "object") return null;
+
+  const record = data as Record<string, unknown>;
+
+  for (const key of ["count", "value", "total"]) {
+    if (typeof record[key] === "number") return record[key];
+  }
+
+  if (record.data) return getCount(record.data);
+
   return null;
 }
 
@@ -16,14 +20,14 @@ export async function GET() {
   const projectId = process.env.VERCEL_PROJECT_ID;
 
   if (!token || !projectId) {
-    return Response.json({ count: null }, { status: 503 });
+    return Response.json(
+      { count: null, error: "Vercel Analytics token or project ID is unavailable." },
+      { status: 503 },
+    );
   }
 
-  const now = Date.now();
   const params = new URLSearchParams({
     projectId,
-    from: String(now - THIRTY_DAYS_MS),
-    to: String(now),
     filter: "requestPath eq '/'",
   });
   const teamId = process.env.VERCEL_TEAM_ID ?? process.env.VERCEL_ORG_ID;
@@ -40,13 +44,19 @@ export async function GET() {
     );
 
     if (!response.ok) {
-      return Response.json({ count: null }, { status: 502 });
+      return Response.json(
+        { count: null, error: `Vercel Analytics query failed (${response.status}).` },
+        { status: 502 },
+      );
     }
 
-    const count = getCount((await response.json()) as AnalyticsCountResponse);
+    const count = getCount(await response.json());
 
     if (count === null) {
-      return Response.json({ count: null }, { status: 502 });
+      return Response.json(
+        { count: null, error: "Vercel Analytics returned an unexpected response." },
+        { status: 502 },
+      );
     }
 
     return Response.json(
@@ -54,6 +64,9 @@ export async function GET() {
       { headers: { "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400" } },
     );
   } catch {
-    return Response.json({ count: null }, { status: 502 });
+    return Response.json(
+      { count: null, error: "Could not reach the Vercel Analytics API." },
+      { status: 502 },
+    );
   }
 }

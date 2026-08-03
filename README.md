@@ -37,4 +37,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## Analytics counter
 
-The eye counter shows visitors to `/` over the last 30 days. Enable Web Analytics for the Vercel project, then add a `VERCEL_ANALYTICS_TOKEN` environment variable with access to the project. Vercel provides `VERCEL_PROJECT_ID` and `VERCEL_ORG_ID` to deployments when system environment variables are enabled; set them manually for local testing. The token is only used by the server-side `/api/page-views` route.
+The eye counter shows visitors to `/` across the analytics API's available reporting window. Enable Web Analytics for the Vercel project, then add a `VERCEL_ANALYTICS_TOKEN` environment variable with access to the project. Vercel provides `VERCEL_PROJECT_ID` and `VERCEL_ORG_ID` to deployments when system environment variables are enabled; set them manually for local testing. The token is only used by the server-side `/api/page-views` route.
