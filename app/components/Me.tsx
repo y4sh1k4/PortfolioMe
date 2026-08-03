@@ -2,6 +2,7 @@ import Image from "next/image";
 import { FaRegEye } from "react-icons/fa";
 import { DottedHorizontalStrip } from "./Strips/HorizontalStrip";
 import { DottedStrip } from "./Strips/Strip";
+import { ViewCount } from "./ViewCount";
 
 export const Me = () => {
   const roles = [
@@ -46,8 +47,8 @@ export const Me = () => {
 
           <div className="flex items-center gap-2 px-4 font-mono text-sm text-portfolio-nav-text">
             <FaRegEye aria-hidden="true" />
-            <span className="sr-only">Profile views:</span>
-            2
+            <span className="sr-only">Visitors in the last 30 days:</span>
+            <ViewCount />
           </div>
         </div>
       </div>
