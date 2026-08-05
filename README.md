@@ -1,40 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Yashika Mehndiratta — Portfolio
 
-## Getting Started
+This is the personal portfolio of **Yashika Mehndiratta**, a design-minded frontend and UI-focused software engineer. It is a space for the work, craft, and curiosity behind building web experiences that feel clear, responsive, and considered.
 
-First, run the development server:
+## About me
+
+I build modern web applications with a strong eye for clean interfaces and smooth user experiences. My work sits at the intersection of engineering and design: turning ideas into polished, usable products while caring about the details that make an interface feel good to use.
+
+I am especially drawn to:
+
+- Thoughtful, user-first UI and interaction design
+- Responsive, accessible frontend systems
+- Motion and visual storytelling on the web
+- Product-minded problem solving, from the first idea through refinement
+- Learning new tools and patterns to make better experiences
+
+## What I bring
+
+- **Design engineering perspective** — I pair visual sensitivity with practical frontend implementation.
+- **UI craftsmanship** — I care about layout, responsiveness, interaction states, and the small details that improve a product.
+- **Curiosity and adaptability** — I enjoy exploring new technologies, design ideas, and better ways to build.
+- **Experience with complex products** — My background includes real-time collaboration, trading interfaces, and Web3 applications.
+- **Ownership and collaboration** — I can work from an initial concept to a refined, production-ready experience alongside product and engineering teams.
+
+## Experience
+
+- **Frontend Developer, Stratium** — leading the trading UI for a Hyperliquid-based asset platform and improving trading-data API usage.
+- **Frontend Developer, Chainsight** — created interactive frontend experiences with Next.js, Framer Motion, and React Three Fiber.
+- **Frontend Developer, Metapong** — developed animated, responsive product interfaces as a freelancer.
+- **Frontend Web3 Developer, Remex Trade** — built frontend architecture for a decentralized exchange, including wallet authentication.
+- **Frontend Intern, Know Your Colleges** — built maintainable React interfaces and worked with hooks and context-based state management.
+
+## Selected projects
+
+- **[KeyVault](https://github.com/y4sh1k4/KeyVault)** — Next.js, TypeScript, Express, PostgreSQL, Prisma, and AWS Lambda.
+- **[Syncpad](https://github.com/y4sh1k4/Syncpad)** — a collaborative editing experience built with Next.js, TypeScript, Convex, Liveblocks, Tiptap, and Clerk.
+
+## Toolkit
+
+- **Frontend:** TypeScript, JavaScript, React, Next.js, Tailwind CSS, Redux, Zustand
+- **Motion & 3D:** Motion, Framer Motion, React Three Fiber, Three.js
+- **Backend & data:** Node.js, Express, MongoDB, PostgreSQL, Prisma, Convex
+- **Web3:** Solidity, Hardhat, Ethers.js, Web3.js, Privy
+- **Workflow:** Git, GitHub, Vercel, ChatGPT, Cursor
+
+## Features
+
+- Responsive, single-page portfolio with in-page navigation
+- Light and dark themes with persisted preference and View Transitions API support
+- Staggered content reveals and interactive experience cards
+- GitHub contribution calendar for [@y4sh1k4](https://github.com/y4sh1k4)
+- Direct social links and a prefilled email enquiry form
+- Optional page-view count using Vercel Web Analytics
+
+## Built with
+
+- Next.js 16, React 19, and TypeScript
+- Tailwind CSS 4
+- `react-icons`, `react-github-calendar`, `use-sound`, and Vercel Analytics
+
+## Run locally
+
+Prerequisites: Node.js 20.9+ and pnpm.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm lint
+pnpm build
+pnpm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Optional analytics
 
-## Learn More
+The portfolio works without environment variables; the view count will display `—`. To enable it, copy the example file and provide your Vercel Analytics credentials:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+cp .env.example .env.local
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```dotenv
+VERCEL_ANALYTICS_TOKEN=
+VERCEL_PROJECT_ID=
+# Optional for team-owned projects
+VERCEL_ORG_ID=
+VERCEL_TEAM_ID=
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+`VERCEL_ANALYTICS_TOKEN` is used only in the server-side `/api/page-views` route. Do not expose it with a `NEXT_PUBLIC_` prefix.
 
-## Deploy on Vercel
+## Connect
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [GitHub](https://github.com/y4sh1k4)
+- [LinkedIn](https://www.linkedin.com/in/yashika-mehndiratta-694268248/)
+- [X](https://x.com/hey_itsyashika)
+- [Email](mailto:itsmeyashika11@gmail.com)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
 
-## Analytics counter
-
-The eye counter shows page views for `/` across the analytics API's available reporting window. Enable Web Analytics for the Vercel project, then add a `VERCEL_ANALYTICS_TOKEN` environment variable with access to the project. Vercel provides `VERCEL_PROJECT_ID` and `VERCEL_ORG_ID` to deployments when system environment variables are enabled; set them manually for local testing. The token is only used by the server-side `/api/page-views` route.
+All rights reserved © Yashika Mehndiratta.
