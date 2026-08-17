@@ -17,7 +17,7 @@ export const Blog = () => {
       <DottedHorizontalStrip />
 
       <Link
-        href="/blog/state-ownership"
+        href="/blogs/state-ownership"
         className="group block border-b border-portfolio-border bg-portfolio-surface-tile p-5 text-left transition-colors duration-300 hover:bg-portfolio-surface-control focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-portfolio-accent"
       >
         <div className="flex items-start justify-between gap-4">
