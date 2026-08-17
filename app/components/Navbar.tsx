@@ -83,6 +83,7 @@ export function Navbar() {
             <div className="flex gap-6 items-center justify-center ">
                 <a href="#experience" className="text-sm text-portfolio-nav-text transition-colors hover:text-portfolio-text-bright focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-portfolio-accent">Work</a>
                 <a href="#projects" className="text-sm text-portfolio-nav-text transition-colors hover:text-portfolio-text-bright focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-portfolio-accent">Projects</a>
+                <a href="#blog" className="text-sm text-portfolio-nav-text transition-colors hover:text-portfolio-text-bright focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-portfolio-accent">Writing</a>
                 <a href="#contact" className="text-sm text-portfolio-nav-text transition-colors hover:text-portfolio-text-bright focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-portfolio-accent">Contact</a>
             </div>
             <button

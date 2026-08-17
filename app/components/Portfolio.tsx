@@ -10,6 +10,7 @@ import { Project } from "./Project";
 import { Talk } from "./Talk";
 import { Quote } from "./Quote";
 import { Copyright } from "./Copyright";
+import { Blog } from "./Blog";
 
 const revealSections = [
   <Navbar key="navbar" />,
@@ -27,6 +28,8 @@ const revealSections = [
   <section id="experience" key="experience"><Experience /></section>,
   <DecorativeHorizontalStrip key="strip-project" />,
   <section id="projects" key="project"><Project /></section>,
+  <DecorativeHorizontalStrip key="strip-blog" />,
+  <Blog key="blog" />,
   <DecorativeHorizontalStrip key="strip-talk" />,
   <Talk key="talk" />,
   <DecorativeHorizontalStrip key="strip-quote" />,
