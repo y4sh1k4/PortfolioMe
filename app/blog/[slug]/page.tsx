@@ -6,10 +6,10 @@ import { notFound } from "next/navigation";
 import { MarkdownContent } from "../../components/MarkdownContent";
 
 const post = {
-  slug: "beyond-usestate",
+  slug: "state-ownership",
   title: "Understanding State Ownership in Complex Frontends",
   description: "A practical mental model for deciding where your frontend state actually belongs.",
-  file: "beyond-usestate.md",
+  file: "state-ownership.md",
 };
 
 export function generateStaticParams() {
