@@ -6,11 +6,13 @@ const projects = [
     {
         name: "KeyVault",
         repository: "https://github.com/y4sh1k4/KeyVault",
+        liveDemo: null,
         stack: ["Next.js", "TypeScript", "Express", "PostgreSQL", "Prisma", "AWS Lambda"],
     },
     {
         name: "Syncpad",
         repository: "https://github.com/y4sh1k4/Syncpad",
+        liveDemo: "https://syncpad.yashika.xyz/",
         stack: ["Next.js", "TypeScript", "Convex", "Liveblocks", "Tiptap", "Clerk"],
     },
 ];
@@ -65,7 +67,18 @@ export const Project = () =>{
                             >
                                 View repository
                             </a>
-                            <span className="text-portfolio-text-subtle">Live demo coming soon</span>
+                            {project.liveDemo ? (
+                                <a
+                                    href={project.liveDemo}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="text-portfolio-text-soft transition-colors hover:text-portfolio-text-bright focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-portfolio-accent"
+                                >
+                                    Live demo
+                                </a>
+                            ) : (
+                                <span className="text-portfolio-text-subtle">Live demo coming soon</span>
+                            )}
                         </div>
                     </article>
                 ))}
